@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import '/./App.css'; //引入樣式檔案來設定外觀
+import './App.css'; //引入樣式檔案來設定外觀
 
 function App() { //定義主元件APP
   //用 useState 這個 Hook 來建立一個狀態變數 isRecording，並且給它一個初始值 false
