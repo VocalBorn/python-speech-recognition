@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './App.css'; //引入樣式檔案來設定外觀
+import '/./App.css'; //引入樣式檔案來設定外觀
 
 function App() { //定義主元件APP
   //用 useState 這個 Hook 來建立一個狀態變數 isRecording，並且給它一個初始值 false
@@ -45,8 +45,3 @@ function App() { //定義主元件APP
     </div>
   );
 }
-export default App; //將這個元件匯出，讓其他檔案可以使用
-//這個元件是用來顯示一個錄音的介面，包含一個按鈕和一些文字
-//當按鈕被點擊時，會開始或結束錄音，並且顯示相應的文字和圖片
-//這個元件的樣式是透過 CSS 檔案來設定的
-//這個元件的主要功能是讓使用者可以開始或結束錄音，並且顯示錄音的狀態
