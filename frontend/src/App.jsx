@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Recoder from './components/recoder.jsx';
+import Recorder from './components/recoder.jsx';
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 
       <h1 className="title">語音辨識</h1>
       
-      <Recoder isRecording={isRecording} onClick={onClick}/>
+      <Recorder isRecording={isRecording} onClick={handleClick}/>
       
 
       <div className="result">
