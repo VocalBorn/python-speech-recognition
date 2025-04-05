@@ -8,10 +8,6 @@ function RecorderButton({isRecording,onClick}){
             src={isRecording ? '/images/stop.png' : '/images/mic.png'}
             alt={isRecording ? '停止錄音' : '開始錄音'}
             />
-
-            <p className="message">
-                {isRecording ? '停止錄音':'錄音開始'}
-            </p>
         </button>
     );
 }
