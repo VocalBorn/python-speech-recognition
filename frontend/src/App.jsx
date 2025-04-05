@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Recorder from './components/recoder.jsx';
+import Recorder from './components/recorder.jsx';
 import RecorderButton from './components/recorderButton.jsx';
 
 function App() {
@@ -15,8 +15,10 @@ function App() {
 
       <h1 className="title">語音辨識</h1>
       
+      
       <RecorderButton isRecording={isRecording} onClick={handleClick}/>
-
+      <Recorder isRecording={isRecording}/>
+      
       <div className="result">
         <h2 className="result-title">錄音結果</h2>
         <p className="result-text">這裡顯示錄音結果</p>
