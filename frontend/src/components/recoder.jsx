@@ -10,8 +10,6 @@ function Recorder({isRecording,onClick}){
   useEffect(() => {
     
     if(isRecording){
-
-     
       
       navigator.mediaDevices.getUserMedia({audio:true})
       .then((stream) =>{
