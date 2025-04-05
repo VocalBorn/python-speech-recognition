@@ -29,8 +29,8 @@ html, body {
 
 
 /* 滑鼠移到按鈕時變深藍 */
-.record-button:hover {
-  background-color: #0056b3;
+.recorder-button:hover {
+  background-color:rgb(126, 161, 198);
 }
 
 /* 顯示訊息的樣式 */
