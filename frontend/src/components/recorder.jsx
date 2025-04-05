@@ -53,6 +53,28 @@ function Recorder({isRecording,onClick}){
  
 
   },[isRecording]);
+
+  return (
+    <>
+      {/* 錄音按鈕 */}
+      <button className="record-button" onClick={onClick}>
+        {isRecording ? '停止錄音' : '開始錄音'}
+        <img 
+          src={isRecording ? '/stop.png' : '/record.png'} // 顯示不同圖示
+          alt="錄音圖示"
+        />
+        <p className="message">
+          {isRecording ? '正在錄音' : '錄音完成'}
+        </p>
+      </button>
+
+      {/* 若有錄音結果，顯示音訊播放器 */}
+      {audioURL && (
+        <audio controls src={audioURL} className="audio-player" />
+      )}
+    </>
+  );
 }
+
 
 export default Recorder;
