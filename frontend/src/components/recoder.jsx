@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import { useState } from "react";
-import { useEffect,useRef,useState }  from "react";
+import { useEffect,useRef}  from "react";
 
 function Recorder({isRecording,onClick}){
   const mediaRecorderRef = useRef(null); //儲存MediaRecorder實例
