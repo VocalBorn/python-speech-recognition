@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="title">語音辨識</h1>
+      <h1 className="title">錄音介面</h1>
 
       
       <RecorderButton isRecording={isRecording} onClick={handleClick} />
