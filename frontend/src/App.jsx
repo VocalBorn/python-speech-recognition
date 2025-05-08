@@ -16,14 +16,15 @@ function App() {
     <div className="container">
       <h1 className="title">語音辨識</h1>
 
-      <Recorder audioURL={audioURL} />
+      
       <RecorderButton isRecording={isRecording} onClick={handleClick} />
 
       {error && <p className="message">⚠️ 錯誤：{error.message}</p>}
 
       <div className="result">
         <h2 className="result-title">錄音結果</h2>
-        <p className="result-text">這裡顯示錄音結果</p>
+        <p className="result-text">請點擊上方按鈕開始錄音</p>
+        <Recorder audioURL={audioURL} />
       </div>
     </div>
   );
