@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-
+import { uploadAudio } from '../utils/uploadAudio.js'; // 上傳音訊的函式
 export function useAudioRecorder(isRecording) {
   const mediaRecorderRef = useRef(null); // MediaRecorder 實例
   const chunksRef = useRef([]);          // 暫存錄音資料
@@ -41,6 +41,8 @@ export function useAudioRecorder(isRecording) {
           console.log('[Recorder] 音訊 URL 已產生:', url);
         };
 
+        
+
         // 開始錄音
         mediaRecorder.start();
         console.log('[Recorder] 錄音開始');
@@ -50,27 +52,30 @@ export function useAudioRecorder(isRecording) {
       }
     };
 
-    // 停止錄音
-    const stopRecording = () => {
+      // 停止錄音
+      const stopRecording = () => {
       if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
         console.log('[Recorder] 停止錄音');
         mediaRecorderRef.current.stop();
       }
-    };
+      };
 
-    // 根據 isRecording 控制開始或停止
-    if (isRecording) {
-      startRecording();
-    } else {
-      stopRecording();
-    }
+      // ✅ 上傳音訊
+      uploadAudio(blob);
 
-    // 清理：unmount 時停止錄音
-    return () => {
-      console.log('[Recorder] 組件卸載，強制停止錄音');
-      stopRecording();
-    };
-  }, [isRecording]);
+      // 根據 isRecording 控制開始或停止
+      if (isRecording) {
+        startRecording();
+      } else {
+        stopRecording();
+      }
+
+      // 清理：unmount 時停止錄音
+      return () => {
+        console.log('[Recorder] 組件卸載，強制停止錄音');
+        stopRecording();
+      };
+    }, [isRecording]);
 
   return { audioURL, error };
 }
