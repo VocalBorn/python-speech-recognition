@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { uploadAudio } from '../utils/uploadAudio.js'; // 上傳音訊的函式
+
 export function useAudioRecorder(isRecording) {
   const mediaRecorderRef = useRef(null); // MediaRecorder 實例
   const chunksRef = useRef([]);          // 暫存錄音資料
@@ -60,8 +61,12 @@ export function useAudioRecorder(isRecording) {
       }
       };
 
-      // ✅ 上傳音訊
-      uploadAudio(blob);
+      try {
+        uploadAudio(blob);  // ✅ 正確位置
+      } catch (e) {
+        console.error("上傳錯誤", e);
+      }
+      
 
       // 根據 isRecording 控制開始或停止
       if (isRecording) {
