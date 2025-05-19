@@ -40,6 +40,12 @@ export function useAudioRecorder(isRecording) {
           });
 
           console.log('[Recorder] 音訊 URL 已產生:', url);
+
+          try {
+            uploadAudio(blob);  // ✅ 正確位置
+          } catch (e) {
+            console.error("上傳錯誤", e);
+          }
         };
 
         
@@ -61,11 +67,7 @@ export function useAudioRecorder(isRecording) {
       }
       };
 
-      try {
-        uploadAudio(blob);  // ✅ 正確位置
-      } catch (e) {
-        console.error("上傳錯誤", e);
-      }
+      
       
 
       // 根據 isRecording 控制開始或停止
